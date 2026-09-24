@@ -18,7 +18,7 @@ public:
                 else if(token == "/") s.push(a/b);
 
             } else{
-                s.push(stoi(token));
+                s.push(stoi(token)); // to convert number into integer 
             }
         }
         return s.top();

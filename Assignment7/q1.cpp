@@ -16,7 +16,7 @@ private:
 
 public:
     string convert(string s) {
-        stack<char> st;
+        stack<char> st; // used for temporarily store operators and parentheses
         string result = "";
 
         for (int i = 0; i < s.length(); i++) {
@@ -43,7 +43,7 @@ public:
             // If an operator is encountered
             else {
                 while (!st.empty() && precedence(c) <= precedence(st.top())) {
-                    if (c == '^' && st.top() == '^') break;
+                    if (c == '^' && st.top() == '^') break; // exception rule for the exponent(^) becoz of (R to L)
                     result += st.top();
                     st.pop();
                 }
